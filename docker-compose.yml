@@ -60,6 +60,18 @@ services:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
             timeout: 5s
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - ${PHPMYADMIN_PORT:-81}:80
+        environment:
+            PMA_HOST: 'mysql'
+            PMA_USER: 'root'
+            PMA_PASSWORD: '${DB_PASSWORD}'
+        networks:
+            - sail
+        depends_on:
+            - mysql
     meilisearch:
         image: 'getmeili/meilisearch:latest'
         ports:
