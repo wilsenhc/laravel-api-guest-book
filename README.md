@@ -10,7 +10,7 @@ story.
 
 **Points estimation:** 1pts
 
-**Time estimation:** Aprox 1 hour
+**Time estimation:** Less than 1 hour
 
 **Time to be done:** 28 minutes
 
@@ -21,7 +21,7 @@ story.
 
 **Points estimation:** 1pts
 
-**Time estimation:** Aprox 1 hour
+**Time estimation:** Less than 1 hour
 
 **Time to be done:** 40 minutes
 
@@ -33,6 +33,18 @@ of all Comments for a given Guest Book
 
 **Points estimation:** 1pts
 
-**Time estimation:** Aprox 1 hour
+**Time estimation:** Less than 1 hour
 
 **Time to be done:** 35 minutes
+
+### **#GB-4**
+
+**Title:** Endpoint to Create new Comment in a Guest Book
+**Description:** The project should setup the route `POST /api/guest-book/{guest_book}/comments` whocih should receive a `name`
+and a `message` and add the comment to the Given Guest Book
+
+**Points estimation:** 1pts
+
+**Time estimation:** Less than 1 hour
+
+**Time to be done:** 26 minutes
