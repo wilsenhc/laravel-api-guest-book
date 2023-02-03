@@ -22,7 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('/guest-book', GuestBookController::class)->only(['index']);
 
-Route::scopeBindings()->group(function () {
-    Route::resource('/guest-book/{guest_book:uuid}/comments', CommentController::class)
-        ->only(['index', 'store']);
-});
+Route::resource('/guest-book/{guest_book}/comments', CommentController::class)
+    ->only(['index', 'store', 'update'])
+    ->scoped([
+        'guest_book' => 'uuid',
+        'comment' => 'uuid'
+    ]);

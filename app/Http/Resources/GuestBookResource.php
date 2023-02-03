@@ -17,6 +17,7 @@ class GuestBookResource extends JsonResource
         return [
             'uuid' => $this->uuid,
             'name' => $this->name,
+            'comments' => CommentCollection::make($this->whenLoaded('comments'))
         ];
     }
 }

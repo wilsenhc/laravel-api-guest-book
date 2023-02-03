@@ -40,7 +40,7 @@ of all Comments for a given Guest Book
 ### **#GB-4**
 
 **Title:** Endpoint to Create new Comment in a Guest Book
-**Description:** The project should setup the route `POST /api/guest-book/{guest_book}/comments` whocih should receive a `name`
+**Description:** The project should setup the route `POST /api/guest-book/{guest_book}/comments` which should receive a `name`
 and a `message` and add the comment to the Given Guest Book
 
 **Points estimation:** 1pts
@@ -48,3 +48,15 @@ and a `message` and add the comment to the Given Guest Book
 **Time estimation:** Less than 1 hour
 
 **Time to be done:** 26 minutes
+
+### **#GB-5**
+
+**Title:** Endpoint to Update existing Comment in a Guest Book
+**Description:** The project should setup the route `PUT /api/guest-book/{guest_book}/comments/{comment}` which should receive a
+`name` and a `message` and update the given comment.
+
+**Points estimation:** 1pts
+
+**Time estimation:** Less than 1 hour
+
+**Time to be done:** 25 minutes
