@@ -8,7 +8,7 @@ use App\Http\Resources\CommentResource;
 use App\Http\Resources\GuestBookResource;
 use App\Models\Comment;
 use App\Models\GuestBook;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CommentController extends Controller
 {
@@ -43,7 +43,7 @@ class CommentController extends Controller
      * @param  \App\Http\Requests\CommentUpdateRequest  $request
      * @param  \App\Models\GuestBook  $guestBook
      * @param  \App\Models\Comment  $comment
-     * @return \App\Http\Resources\CommentResource
+     * @return \App\Http\Resources\GuestBookResource
      */
     public function update(CommentUpdateRequest $request, GuestBook $guestBook, Comment $comment)
     {
@@ -52,5 +52,19 @@ class CommentController extends Controller
         $guestBook = $guestBook->load(['comments:id,guest_book_id,uuid,name,message']);
 
         return new GuestBookResource($guestBook);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\GuestBook  $guestBook
+     * @param  \App\Models\Comment  $comment
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(GuestBook $guestBook, Comment $comment)
+    {
+        $comment->delete();
+
+        return response()->json(status: Response::HTTP_NO_CONTENT);
     }
 }

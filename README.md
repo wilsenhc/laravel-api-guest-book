@@ -60,3 +60,15 @@ and a `message` and add the comment to the Given Guest Book
 **Time estimation:** Less than 1 hour
 
 **Time to be done:** 25 minutes
+
+### **#GB-6**
+
+**Title:** Endpoint to Delete a existing Comment in a Guest Book
+**Description:** The project should setup the route `DELETE /api/guest-book/{guest_book}/comments/{comment}` which should delete
+the given comment.
+
+**Points estimation:** 1pts
+
+**Time estimation:** Less than 30 minutes
+
+**Time to be done:** 15 minutes
