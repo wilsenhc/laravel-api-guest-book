@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GuestBookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('/guest-book', GuestBookController::class)->only(['index']);
+
+Route::resource('/guest-book/{guest_book:uuid}/comments', CommentController::class)
+    ->only(['index'])
+    ->scopeBindings();
